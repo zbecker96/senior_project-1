@@ -10,14 +10,9 @@
       date_default_timezone_set('America/New_York');
       echo "<p>" . date('m/d/Y h:i:s a', time()) . "</p>\n";
 
-      $servername = "localhost";
-      $username = "root";
-      $password = "";
-      $database = "anonymousboard";
-
-      $conn = @mysqli_connect($localhost, $username, $password);
+      include "inc_user_connect.php";
       if ($conn === FALSE) {
-        echo "<p>Error connecting to database. " . mysqli_error() . "</p>\n";
+        echo "<p>Could not connect to the database. " . mysqli_error() . "</p>\n";
       }
       else {
         echo "<hr />\n<h2>Categories</h2>\n<hr />\n";
