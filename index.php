@@ -17,10 +17,11 @@
       else {
         echo "<hr />\n<h2>Categories</h2>\n<hr />\n";
 	mysqli_select_db($conn, $database);
-	$categories = @mysqli_query($conn, "SELECT names FROM category");
+	$categories = @mysqli_query($conn, "SELECT id, names FROM category");
+	$host_url = $_SERVER['HTTP_HOST'];
 
 	while ($row = mysqli_fetch_row($categories)) {
-	  echo "<hr />\n<h3>" . $row . "</h3>\n";
+	  echo "<hr />\n<h3><a href=\"" . $host_url . "/" . $row[0] . "\">" . $row[1] . "</a></h3>\n";
 	}
 
 	mysqli_close($conn);
