@@ -4,6 +4,7 @@
     <title>Insert Category</title>
   </head>
   <body>
+    <img src="/images/NetBoard_Logo.png" />
     <?php
       if (isset($_POST['insert_category'])) {
 	if (strcmp($_POST['name'], "")  === 0|| strcmp($_POST['description'], "") === 0) {

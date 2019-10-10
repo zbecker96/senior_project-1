@@ -20,6 +20,7 @@
     ?>
   </head>
   <body>
+    <img src="/images/NetBoard_Logo.png" />
     <h1>Category Page</h1>
     <hr />
     <?php

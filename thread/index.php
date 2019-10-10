@@ -10,6 +10,7 @@
 </head>
 <body>
 <?php
+  echo "<img src=\"/images/NetBoard_Logo.png\" />\n";
   echo "<div class=\"jumbotron text-center\">\n";
   echo "<h1> Anonymous Message Board  </h1>\n";
   echo "<p> Created by: students.net </p>\n";
