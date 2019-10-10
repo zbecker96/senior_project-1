@@ -4,6 +4,7 @@
     <title>Preliminary Anonymous Board</title>
   </head>
   <body>
+    <img src="http://<?php echo $_SERVER['HTTP_HOST']; ?>/images/NetBoard_Logo.png" />
     <h1>Testing the webserver for functionality</h1>
     <hr />
     <?php
