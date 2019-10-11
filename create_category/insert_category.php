@@ -13,7 +13,21 @@
                "page</a> and fully enter all fields.</p>\n";
 	}
 	else {
-	  echo "<p>Category has been submitted to the database.</p>\n";
+	  include "inc_user_connect.php";
+	  if ($conn === FALSE) {
+	    echo "<p>Could not connect to the database. " . mysqli_error(). "</p>\n" .
+	         "<p>Try inserting data again when the database is available.</p>\n";
+	  }
+	  else {
+	    mysqli_select_db($conn, $database);
+	    $insert = "INSERT INTO category " .
+	              "(name, description, created) " .
+		      "VALUES " .
+		      "(\"" . $_POST['name'] . "\", \"" . $_POST['description'] . "\", NOW())";
+	    // echo "<p>" . $insert . "</p>\n";
+	    @mysqli_query($conn, $insert);
+	    echo "<p>Category has been submitted to the database.</p>\n";
+	  }
 	}
       }
       else {
