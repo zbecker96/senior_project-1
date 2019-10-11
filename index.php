@@ -16,13 +16,13 @@
         echo "<p>Could not connect to the database. " . mysqli_error() . "</p>\n";
       }
       else {
-        echo "<hr />\n<h2>Categories</h2>\n<hr />\n";
+        echo "<hr />\n<h2>Categories</h2>\n";
 	mysqli_select_db($conn, $database);
-	$categories = @mysqli_query($conn, "SELECT id, names FROM category");
-	$host_url = $_SERVER['HTTP_HOST'];
+	$categories = @mysqli_query($conn, "SELECT id, name, description FROM category");
 
 	while ($row = mysqli_fetch_row($categories)) {
-	  echo "<hr />\n<h3><a href=\"" . $host_url . "/" . $row[0] . "\">" . $row[1] . "</a></h3>\n";
+	  echo "<hr />\n<h3><a href=\"/category/index.php/" . $row[0] . "\">" . $row[1] . "</a></h3>\n";
+	  echo "<p>" . $row[2] . "</p>\n";
 	}
 
 	mysqli_close($conn);
