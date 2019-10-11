@@ -4,7 +4,7 @@
     <?php
       $db_connect = TRUE;
       $category = "Category";
-      $cat_id = str_replace("/category/", "", $_SERVER['REQUEST_URI']);
+      $cat_id = str_replace("/category/index.php/", "", $_SERVER['REQUEST_URI']);
       include "inc_user_connect.php";
       if ($conn === FALSE) {
         $db_connect = FALSE;
@@ -12,7 +12,8 @@
 
       if ($db_connect && strcmp($cat_id, "") !== 0) {
         mysqli_select_db($conn, $database);
-	$n = @mysqli_query($conn, "SELECT name FROM category where id = " . $cat_id);
+	$c_query = "SELECT name FROM category WHERE id = " . $cat_id;
+	$n = @mysqli_query($conn, $c_query);
 	$category = mysqli_fetch_row($n)[0];
       }
       
