@@ -1,6 +1,6 @@
 <?php
   $servername = "localhost";
-  $username = "User";
+  $username = "Admin";
   $password = "";
   $database = "anonymousboard";
 

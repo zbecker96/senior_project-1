@@ -13,7 +13,7 @@
                "page</a> and fully enter all fields.</p>\n";
 	}
 	else {
-	  include "inc_user_connect.php";
+	  include "inc_admin_connect.php";
 	  if ($conn === FALSE) {
 	    echo "<p>Could not connect to the database. " . mysqli_error(). "</p>\n" .
 	         "<p>Try inserting data again when the database is available.</p>\n";
